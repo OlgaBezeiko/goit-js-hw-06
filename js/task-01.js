@@ -1,27 +1,13 @@
-
-
-const categoriesList = document.querySelector('#categories');
-const items = categoriesList.querySelectorAll('.item');
-
-console.log(`Number of categories: ${items.length}`);
-
-items.forEach(item => {
-  const heading = item.querySelector('h2');
-  const category = heading.textContent;
-  const elements = item.querySelectorAll('li');
-
-  console.log(`Category: ${category}`);
-  console.log(`Elements: ${elements.length}`);
-});
-
-
-
 //Напиши скрипт, який:
 
-//Порахує і виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
-//Для кожного элемента li.item у списку ul#categories, знайде і виведе в консоль текст заголовку 
-//елемента (тегу <h2>) і кількість елементів в категорії (усіх <li>, вкладених в нього).
-//Для виконання цього завдання потрібно використати метод forEach() і властивості навігації по DOM.
+//Порахує і виведе в консоль кількість категорій в ul#categories, 
+//тобто елементів li.item.
+//Для кожного элемента li.item у списку ul#categories, 
+//знайде і виведе в консоль текст заголовку 
+//елемента (тегу <h2>) і кількість елементів в категорії 
+//(усіх <li>, вкладених в нього).
+//Для виконання цього завдання потрібно використати метод 
+//forEach() і властивості навігації по DOM.
 
 //В результаті, в консолі будуть виведені наступні повідомлення.
 
@@ -35,3 +21,24 @@ items.forEach(item => {
 
 //Category: Technologies
 //Elements: 5
+
+
+//1. шукаю унікальний елемент по ID
+const categoriesList = document.querySelector('#categories');
+//2. шукаю всі елементи списку певної категорії. 
+//Колекція, можна перебрати методами масиву
+const items = categoriesList.querySelectorAll('.item');
+
+console.log(`Number of categories: ${items.length}`);
+//3. перебираю колекцію, вертаю все згідно завдання 
+items.forEach(item => {
+  const heading = item.querySelector('h2');
+  const category = heading.textContent;
+  const elements = item.querySelectorAll('li');
+
+  console.log(`Category: ${category}`);
+  console.log(`Elements: ${elements.length}`);
+});
+
+
+

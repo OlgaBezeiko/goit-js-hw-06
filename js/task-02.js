@@ -10,10 +10,10 @@ const ingredients = [
 const ul = document.querySelector("#ingredients");
 
 ingredients.forEach((ingredient) => {
-  const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ul.appendChild(li);
+  const li = document.createElement("li"); //створюємо елемент
+  li.textContent = ingredient;//додаємо назву
+  li.classList.add("item");//додаємо клас
+  ul.appendChild(li);//вставляємо список після всіх
 });
 
 
