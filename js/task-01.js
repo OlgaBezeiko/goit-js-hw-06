@@ -26,6 +26,7 @@
 const categoriesList = document.getElementById('categories');
 const items = Array.from(categoriesList.children);
 
+
 console.log(`Number of categories: ${items.length}`);
 
 items.forEach(item => {
@@ -36,5 +37,3 @@ items.forEach(item => {
   console.log(`Category: ${category}`);
   console.log(`Elements: ${elements.length}`);
 });
-
-
