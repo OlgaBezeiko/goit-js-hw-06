@@ -23,22 +23,23 @@
 //Elements: 5
 
 
-//1. шукаю унікальний елемент по ID
-const categoriesList = document.querySelector('#categories');
-//2. шукаю всі елементи списку певної категорії. 
-//Колекція, можна перебрати методами масиву
-const items = categoriesList.querySelectorAll('.item');
-
+const categoriesList = document.getElementById('categories');
+const items = categoriesList.getElementsByClassName('item');
 console.log(`Number of categories: ${items.length}`);
-//3. перебираю колекцію, вертаю все згідно завдання 
-items.forEach(item => {
-  const heading = item.querySelector('h2');
-  const category = heading.textContent;
-  const elements = item.querySelectorAll('li');
 
+Array.from(items).forEach(item => {
+  const heading = item.getElementsByTagName('h2');
+  const category = heading.textContent;
+  const elements = item.getElementsByTagName('li');
   console.log(`Category: ${category}`);
   console.log(`Elements: ${elements.length}`);
 });
 
 
-
+//метод getElementById() замість querySelector(), і 
+//метод getElementsByClassName() замість 
+//querySelectorAll(). Метод getElementsByClassName() 
+//повертає живу колекцію, який ми перетворюємо 
+//в масив, використовуючи метод Array.from(), щоб з 
+//ним можна було використовувати метод forEach(). 
+//метод getElementsByTagName() для отримання відповідних елементів. 

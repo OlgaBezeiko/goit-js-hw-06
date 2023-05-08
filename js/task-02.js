@@ -1,3 +1,4 @@
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
@@ -8,15 +9,18 @@ const ingredients = [
 ];
 
 const ul = document.querySelector("#ingredients");
+const items = [];
 
 ingredients.forEach((ingredient) => {
-  const li = document.createElement("li"); //створюємо елемент
-  li.textContent = ingredient;//додаємо назву
-  li.classList.add("item");//додаємо клас
-  ul.appendChild(li);//вставляємо список після всіх
+  const li = document.createElement("li"); 
+  li.textContent = ingredient;
+  li.classList.add("item");
+  items.push(li);
 });
 
+ul.append(...items);
 
+console.log(ul);
 
 //Напиши скрипт, який для кожного елемента масиву ingredients:
 
