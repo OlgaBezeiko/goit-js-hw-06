@@ -24,22 +24,17 @@
 
 
 const categoriesList = document.getElementById('categories');
-const items = categoriesList.getElementsByClassName('item');
+const items = Array.from(categoriesList.children);
+
 console.log(`Number of categories: ${items.length}`);
 
-Array.from(items).forEach(item => {
-  const heading = item.getElementsByTagName('h2');
+items.forEach(item => {
+  const heading = item.firstElementChild;
   const category = heading.textContent;
-  const elements = item.getElementsByTagName('li');
+  const elements = item.lastElementChild.previousElementSibling.children;
+  
   console.log(`Category: ${category}`);
   console.log(`Elements: ${elements.length}`);
 });
 
 
-//метод getElementById() замість querySelector(), і 
-//метод getElementsByClassName() замість 
-//querySelectorAll(). Метод getElementsByClassName() 
-//повертає живу колекцію, який ми перетворюємо 
-//в масив, використовуючи метод Array.from(), щоб з 
-//ним можна було використовувати метод forEach(). 
-//метод getElementsByTagName() для отримання відповідних елементів. 
