@@ -20,7 +20,6 @@ ingredients.forEach((ingredient) => {
 
 ul.append(...items);
 
-console.log(ul);
 
 //Напиши скрипт, який для кожного елемента масиву ingredients:
 
