@@ -29,11 +29,11 @@ const items = Array.from(categoriesList.children);
 
 console.log(`Number of categories: ${items.length}`);
 
-items.forEach(item => {
+items.forEach((item) => {
   const heading = item.firstElementChild;
   const category = heading.textContent;
-  const elements = item.lastElementChild.previousElementSibling.children;
+  const elements = item.lastElementChild.children.length;
   
   console.log(`Category: ${category}`);
-  console.log(`Elements: ${elements.length}`);
+  console.log(`Elements: ${elements}`);
 });
